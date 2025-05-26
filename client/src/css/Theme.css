@@ -1,0 +1,50 @@
+#theme {
+    color: rgb(0, 0, 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #CC6666;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+#description {
+    color: rgb(0, 0, 0);
+    font-family: Helvetica, Arial, sans-serif;
+    height:500px;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #CC6666;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+button {
+    background-color: #4CAF50; /* 緑色 */
+    color: white; /* 文字を白に */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* 角を丸くする */
+    transition: 0.3s; /* ホバー時のアニメーション */
+    margin-left: 30px;
+}
+
+button:hover{
+    background-color: #45a049; /* ホバー時に少し濃く */
+}

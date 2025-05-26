@@ -1,3 +1,4 @@
+##Flask
 # Python関係
 flask-server/__pycache__/
 *.py[cod]
@@ -16,3 +17,24 @@ Thumbs.db
 
 #database
 flask-server/instance/
+
+##React
+# Node modules
+client/node_modules/
+
+# Build output
+dist/
+build/
+
+# System files
+.DS_Store
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
