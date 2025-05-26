@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import "../css/Form.css";
-import config from "../../config";
+import config from "../config";
 
 function Login() {
   const [formData, setFormData] = useState({ username: "", password: "" });

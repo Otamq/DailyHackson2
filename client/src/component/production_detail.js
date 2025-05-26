@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PythonIDE from "./pyIDE";
-import config from "../../config";
+import config from "../config";
 
 function ProductionDetail() {
     const { id } = useParams();
