@@ -16,6 +16,7 @@ function Login() {
     try {
       const response = await fetch(`${config.BACKEND_URL}/login`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },

@@ -15,6 +15,7 @@ function Signup() {
     try {
       const response = await fetch(`${config.BACKEND_URL}/signup`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
