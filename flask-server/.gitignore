@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# VSCodeなどエディタの設定
+.vscode/
+
+# macOSやWindowsのゴミファイル
+.DS_Store
+Thumbs.db
+
+# その他
+*.log
+*.sqlite3
