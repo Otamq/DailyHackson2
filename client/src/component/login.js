@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import "../css/Form.css";
+import config from "../../config";
 
 function Login() {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -13,7 +14,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:5000/login", {
+      const response = await fetch(`${config.BACKEND_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

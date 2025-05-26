@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PythonIDE from "./pyIDE";
+import config from "../../config";
 
 function ProductionDetail() {
     const { id } = useParams();
     const [production, setProduction] = useState(null);
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:5000/production/${id}`)
+        fetch(`${config.BACKEND_URL}/production/${id}`)
             .then(res => res.json())
             .then(data => setProduction(data))
             .catch(err => console.error(err));

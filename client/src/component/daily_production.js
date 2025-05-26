@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PythonIDE from "./pyIDE";
+import config from "../../config";
 
 function DailyProduction() {
     const username = localStorage.getItem("username");

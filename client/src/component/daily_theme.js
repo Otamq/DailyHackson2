@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "../css/Theme.css"
+import config from "../../config";
 
 function DailyTheme() {
     const username = localStorage.getItem("username");
