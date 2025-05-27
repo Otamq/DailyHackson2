@@ -7,7 +7,7 @@ class User(db.Model, UserMixin):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30),nullable=False, unique=True)
-    password = db.Column(db.String(12))
+    password = db.Column(db.String(255))
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
     
     # Flask-Login の login_user() に必要な属性を定義
