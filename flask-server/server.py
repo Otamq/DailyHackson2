@@ -11,7 +11,7 @@ from app import app
 
 
 app.config.from_object(Config)
-CORS(app, supports_credentials=True, origins=["https://daily-hackson2-w0mu9bznr-otamqs-projects.vercel.app"])
+CORS(app, supports_credentials=True, origins=["https://daily-hackson2-8pj0jf7lf-otamqs-projects.vercel.app"])
 
 login_manager = LoginManager()
 
@@ -34,10 +34,6 @@ app.register_blueprint(evaluation_bp)
 scheduler.init_app(app)
 scheduler.start()
 
-
-@app.route("/members")
-def members():
-    return{"members":["Member1","Member2","Member3"]}
 
 if __name__ == '__main__':
     with app.app_context():
