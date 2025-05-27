@@ -11,7 +11,7 @@ from app import app
 
 
 app.config.from_object(Config)
-CORS(app, supports_credentials=True, origins=["https://daily-hackson2-8pj0jf7lf-otamqs-projects.vercel.app"])
+CORS(app, supports_credentials=True, origins=["https://daily-hackson2-8pj0jf7lf-otamqs-projects.vercel.app","https://daily-hackson2.vercel.app"])
 
 login_manager = LoginManager()
 
