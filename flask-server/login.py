@@ -16,8 +16,6 @@ def signup():
     existing_user = User.query.filter_by(username=username).first()
     if existing_user:
         return jsonify({"message":'そのユーザー名は既に使用されています'}), 409
-
-        
     try:
         user = User(username=username, password=generate_password_hash(password, method='pbkdf2:sha256'))
         db.session.add(user)
@@ -26,6 +24,7 @@ def signup():
     except Exception as e:
         db.session.rollback()
         #print('エラーが発生しました。もう一度お試しください')
+        print("⚠️ signupエラー:", e)
         return jsonify({"message": "サーバーエラー", "error": str(e)}), 500
 
     return jsonify({"message": "データを受け取りました"})
