@@ -13,7 +13,7 @@ function Evaluation() {
 
     const fetchTheme = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/show_daily_production_theme", {
+            const response = await fetch(`${config.BACKEND_URL}/show_daily_production_theme`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -28,7 +28,7 @@ function Evaluation() {
 
     const fetchProduction = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/show_daily_production_all", {
+            const response = await fetch(`${config.BACKEND_URL}/show_daily_production_all`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"

@@ -24,7 +24,7 @@ def signup():
     except Exception as e:
         db.session.rollback()
         #print('エラーが発生しました。もう一度お試しください')
-        print("⚠️ signupエラー:", e)
+        #print("⚠️ signupエラー:", e)
         return jsonify({"message": "サーバーエラー", "error": str(e)}), 500
 
     return jsonify({"message": "データを受け取りました"})

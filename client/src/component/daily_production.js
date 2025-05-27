@@ -8,7 +8,7 @@ function DailyProduction() {
     const [ThemeData, setThemeData] = useState({ theme: "" })
     const fetchTheme = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/show_daily_theme", {
+            const response = await fetch(`${config.BACKEND_URL}/show_daily_theme`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -63,7 +63,7 @@ function DailyProduction() {
         formData.append("username", submissionData.username);
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/upload", {
+            const response = await fetch(`${config.BACKEND_URL}/upload`, {
                 method: "POST",
                 body: formData,
             });

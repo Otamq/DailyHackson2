@@ -12,7 +12,7 @@ function DailyTheme() {
     const register_theme = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://127.0.0.1:5000/theme", {
+            const response = await fetch(`${config.BACKEND_URL}/theme`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -33,7 +33,7 @@ function DailyTheme() {
 
     const fetchThemes = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/theme_all", {
+            const response = await fetch(`${config.BACKEND_URL}/theme_all`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -48,7 +48,7 @@ function DailyTheme() {
 
     const fetchGood = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/good_all", {
+            const response = await fetch(`${config.BACKEND_URL}/good_all`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -78,7 +78,7 @@ function DailyTheme() {
         e.preventDefault();
         setGoodInfo({ ...GoodInfo, theme: theme });
         try {
-            const response = await fetch(`http://127.0.0.1:5000/good?username=${GoodInfo.username}&theme=${theme}`, {
+            const response = await fetch(`${config.BACKEND_URL}/good?username=${GoodInfo.username}&theme=${theme}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
