@@ -31,7 +31,7 @@ def register_Theme():
     description = data["description"]
     username = data["username"]
     
-    existed_user = db.session.query(Theme).filter(username == username, Theme.created_at >= start, Theme.created_at < end).first()
+    existed_user = db.session.query(Theme).filter(Theme.username == username, Theme.created_at >= start, Theme.created_at < end).first()
     if existed_user:
         return jsonify({"message": "user is already posted"})
 
