@@ -16,12 +16,22 @@ theme_bp = Blueprint("theme", __name__)
 @theme_bp.route("/theme", methods=["POST"])
 def register_Theme():
     data = request.json
+    now = datetime.now()
+    
+    if now.hour < 6:
+        # 朝6時前なら、前日の6時から今日の6時までを対象とする
+        start = (now - timedelta(days=1)).replace(hour=6, minute=0, second=0, microsecond=0)
+        end = now.replace(hour=6, minute=0, second=0, microsecond=0)
+    else:
+        # 朝6時以降なら、今日の6時から明日の6時までを対象とする
+        start = now.replace(hour=6, minute=0, second=0, microsecond=0)
+        end = (now + timedelta(days=1)).replace(hour=6, minute=0, second=0, microsecond=0)
 
     theme = data["theme"]
     description = data["description"]
     username = data["username"]
     
-    existed_user = db.session.query(Theme).filter(username == username).first()
+    existed_user = db.session.query(Theme).filter(username == username, Theme.created_at >= start, Theme.created_at < end).first()
     if existed_user:
         return jsonify({"message": "user is already posted"})
 
